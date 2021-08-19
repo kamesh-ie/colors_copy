@@ -10,7 +10,7 @@ p{
     cursor: pointer;
 }
 p:hover{
-    transform: scale(1.2);
+    transform: scale(1.1);
     box-shadow: 5px 5px 10px darkgray;
 }
 .container{
