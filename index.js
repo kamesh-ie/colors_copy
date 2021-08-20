@@ -3,7 +3,6 @@ function addcol(){
     for(let i=255;i>0;i-=20){
         for(let j=255;j>0;j-=20){
             for(let k=255;k>0;k-=20){
-                console.log(i,j,k)
                 rgbTOhex(i,j,k)
             }        
         }
@@ -25,11 +24,18 @@ function col_box(color){
     $elem.text(color)
     $elem.addClass('col-lg-2 lazy col-md-3 col-sm-6 col-xs-12 pt-4 m-3 text-center')
     $elem.css("background-color",color)
-    $elem.attr('data-aos','fade-up')
+    $elem.attr({
+        'tabindex':0,
+        'data-toggle':"popover",
+        'data-trigger':"focus",
+        'data-content':'Hex color code has been copied...'+ $elem.css('background-color'),
+        'id':'add'
+    })
+    // $elem.attr('data-aos','fade-up')
 }
 $(document).ready(function(){
     addcol();
-    $('p').click(function(){
+    $('p').mousedown(function(){
         let this_col = $(this).text()
         let $temp = $('<input>')
         $('body').append($temp)
