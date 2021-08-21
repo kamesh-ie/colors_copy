@@ -27,6 +27,7 @@ function col_box(color){
     $elem.attr({
         'tabindex':0,
         'data-toggle':"popover",
+        'data-placement':'top',
         'data-trigger':"focus",
         'data-content':'Hex color code has been copied...'+ $elem.css('background-color'),
         'id':'add'
